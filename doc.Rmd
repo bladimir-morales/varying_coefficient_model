@@ -1,0 +1,39 @@
+---
+title: "Modelos con Coeficientes Variando"
+author: "Bladimir Valerio Morales Torrez"
+date: "Julio 2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introducción
+
+Los modelos aditivos generalizados (modelos no paramétricos), propuestos por @Hastie_Tibshirani_1986 dan a conocer una nueva clase de modelos de regresión, extendiendo y flexibilizando el modelo de regresión clásico, reemplazando la función lineal por una función aditiva suave y no paramétricas, la cual es estimada por el algoritmo de puntuación local (local scoring algorithm).  
+Es así que,  @Hastie_Tibshirani_1993, proponen otra generalización al modelo de regresión lineal clásico, denominados modelos de coeficientes variando (Varying-Coefficient Models VCMs), los cuales contienen regresores lineales pero permiten que sus coeficientes cambien suavemente con el valor de otras variables, que se denominan "modificadores de efecto".
+
+# Marco Teórico
+
+## El modelo 
+
+Supongamos que se tiene una variable aleatoria $Y$ cuya distribución depende de un parámetro $\eta$ que será el predictor lineal y se relaciona con la media $\mu=\mathbb{E}(Y)$ mediante la función enlace $\eta=g(\mu)$, el modelo lineal generalizado con coeficientes variando se puede representar como:
+\begin{eqnarray}\label{modelo.general}
+\eta_i=\beta_0+x_i^{1}\beta_1(t_{1_i})+\cdots+x_i^p\beta_p(t_{p_i})
+\end{eqnarray}
+Donde los $t_1,\cdots,t_p$ cambian los coeficientes de las covariables $x^1,\cdots,x^p$ a través de las funciones $\beta_1,\cdots,\beta_p$. La dependencia de $\beta_j$ en $t_j$, con $j=1,...,p$ implica un tipo de interacción entre $t_j$ y $x^j$, donde la variable $t_j$ puede no ser tan diferente a $x^j$, pero también $t_j$ puede ser una variable especial como el tiempo.  
+Si se toma el modelo Gaussiano, donde $g(\mu)=\mu$ y la variable aleatoria $Y$ tiene distribución normal con media $\eta$, el modelo (\ref{modelo.general}) es de la forma
+\begin{eqnarray}\label{modelo.normal}
+Y_i=\beta_0+x_i^{1}\beta_1(t_{1_i})+\cdots+x_i^p\beta_p(t_{p_i})+\varepsilon_i
+\end{eqnarray}
+donde $\mathbb{E}(\varepsilon)=0$ y $Var(\varepsilon)=\sigma^2$
+## Casos del modelo
+El modelo de coeficientes variando generaliza los siguientes tipos de modelos:
+* Si $\beta_j(t_j)=\beta_j$ una función constante, entonces ese término es lineal en $x^j$. Si todos los términos son lineales se reduce a un modelo lineal generalizado clásico.
+* Si $x^j=c$ con $c$ constante entonces el $j-ésimo$ término es $\beta_j(t_j)$ una función no conocida. Si todos los términos tienen esta característica se tiene un modelo aditivo generalizado.
+* En el término del modelo $x\beta(t)$, cuando $x$ es una variable binaria ($0-1$). Supongamos que también hay un término $\beta_0(t)$ en el modelo. Esto equivale a tener una curva separada correspondiente a cada uno de los dos valores de $x$. 
+* A menudo las $t_j$ serán la misma variable, como puede ser la edad o el tiempo, que podría modificar los efectos de $x^1,...,x^p$
+
+
+
