@@ -108,15 +108,13 @@ El modelo (\ref{modelo.general}) puede ser representado matricialmente como:
 \ymn = \tilde{\Nn}_1\betan_1+\ldots+\tilde{\Nn}_s\betan_s+\varepsilonn,
 \end{equation}
 
-donde $\ymn$ es un vector aleatorio de respuestas observadas $(n\times 1)$,  $\tilde{\Nn}_k=\Xn^{(k)}\Nn_k$, $\Xn^{(k)}=\diag_{1\leq i\leq n}(x_i^{(k)})$ y $\Nn_k$ es la matriz de incidencia de $(n\times r)$ con el $(i,l)$-ésimo elemento igual al indicador $I({\rm \t}_{k_i} = {\rm \t}_{k_{l}}^0)$, con ${\rm t}_{k_{l}}^{0}$ que denota los valores distintos y ordenados de la variable explicativa ${\rm t}_{k_i}$ y $\betan_k=(\psi_{k_1},\ldots,\psi_{k_r})^{\top}$ es un $(r_k\times 1)$ vector
-un vector de parámetros con $\psi_{k_l}=\beta_k(t^{0}_{k_l})$, para $l=1,\ldots,r_k$.
+donde $\ymn$ es un vector aleatorio de respuestas observadas $(n\times 1)$,  $\tilde{\Nn}_k=\Xn^{(k)}\Nn_k$, $\Xn^{(k)}=\diag_{1\leq i\leq n}(x_i^{(k)})$ y $\Nn_k$ es la matriz de incidencia de $(n\times r)$ con el $(i,l)$-ésimo elemento igual al indicador $I({\rm \t}_{k_i} = {\rm \t}_{k_{l}}^0)$, con ${\rm t}_{k_{l}}^{0}$ que denota los valores distintos y ordenados de la variable explicativa ${\rm t}_{k_i}$ y $\betan_k=(\psi_{k_1},\ldots,\psi_{k_r})^{\top}$ es un $(r_k\times 1)$ un vector de parámetros con $\psi_{k_l}=\beta_k(t^{0}_{k_l})$, para $l=1,\ldots,r_k$.
 
 
 # Estimación
 
-El modelo (\ref{modelo.general}), es general para la mayoría de las aplicaciones, ya que no se imponen restricciones a las funciones de los coeficientes. La estimación no paramétrica sin restricciones de estas funciones probablemente no sería posible, salvo en el caso de diseños especiales. En el caso de los datos observacionales, es probable que se vea un valor diferente para cada $\t_k$, en cada muestra. Por esta razón, se impone restricciones a las funciones de los coeficientes variando, por ejemplo, a trozos con forma paramétrica conocida o funciones suaves pero no paramétricas. Una aproximación sería a través de bases paramétricas como funciones polinómicas o trigonométricas. Normalmente, éstas no proporcionan suficiente flexibilidad y adaptabilidad local, por eso es preferible un conjunto de bases splines.    
-Se procederá igual que con un modelo lineal, sólo que con varias variables definidas por los productos de cada $\x_i^{(k)}$, y las bases de $\beta_k(\t_{k_i})$ con este enfoque, las herramientas inferenciales estándar sirven para evaluar conjuntos de coeficientes, puntos de influencia, etc.  
-Las características de las curvas ajustadas pueden ser diferentes con pequeños cambios en las posiciones de los nudos, sobre todo si sólo se tienen pocos.   
+El modelo (\ref{modelo.general}), es general para la mayoría de las aplicaciones, ya que no se imponen restricciones a las funciones de los coeficientes. La estimación no paramétrica sin restricciones de estas funciones probablemente no sería posible, salvo en el caso de diseños especiales. En el caso de los datos observacionales, los $\t_k$ pueden tomar valores diferentes para cada observación, por esta razón, se impone restricciones a las funciones de los coeficientes variando, por ejemplo, a trozos con forma paramétrica conocida o funciones suaves pero no paramétricas. Una aproximación puede ser a través de bases paramétricas como funciones polinómicas o trigonométricas. Normalmente, éstas no proporcionan suficiente flexibilidad y adaptabilidad local, por eso es preferible un conjunto de bases splines. 
+Para la estimación se procede igual que con un modelo lineal, sólo que con varias variables definidas por los productos de cada $\x_i^{(k)}$, y $\beta_k(\t_{k_i})$. Así, las herramientas inferenciales estándar sirven para evaluar conjuntos de coeficientes, puntos de influencia, etc.  Las características de las curvas ajustadas pueden ser diferentes con pequeños cambios en las posiciones de los nudos, sobre todo si sólo se tienen pocos.   
 En este trabajo se mostrará el procedimiento para el modelo (\ref{modelo.normal}) ya que para el modelo (\ref{modelo.general}) se incluyen procedimientos diferentes como el algoritmo de tipo NewtonRaphson.
 
 ## Mínimos Cuadrados Penalizados
@@ -174,9 +172,9 @@ Luego se tiene la función de log. verosimilitud penalizada que esta definida po
 
 $$\ell_p(\tetn,\lambda)=\ell(\tetn)-\sum_{j=1}^s\frac{\lambda_j}{2}\betan_j^{\top}\Kn_j\betan_j$$
 
-## Función Score Penalizada
+## Vector Score Penalizado
 
-Considerando $\lambda$ fijo la función de Score penalizada esta dada por:
+Considerando $\lambda_k$ fijo el vector de Score penalizado esta dada por:
 
 \begin{equation}\label{score}
 \Un_p(\tetn) =\begin{pmatrix}
@@ -202,6 +200,9 @@ Así se tiene:
 \end{align}
 
 ## Matriz Hessiana Penalizada
+
+Esta definida como las segundas derivadas del vector de Score.
+
 
 \begin{align}\nonumber
 \frac{\partial^2\ell_p(\tetn,\lambda)}{\partial \betan_k\partial \betan_k^{\top}}= \frac{\partial}{\partial\betan_k^{\top}}
@@ -342,7 +343,7 @@ $$GLE(\lambda)=traza\{\Hn(\lambda)\}$$
 Para el VCM se tiene:
 
 \begin{align}\nonumber
-GLE(\lambda_k)&=traza\{\Hn(\lambda)\}\\\nonumber
+GLE(\lambda_k)&=traza\{\Hn(\lambda_k)\}\\\nonumber
   &=traza\left\{\tilde{\Nn}_k \left(\tilde{\Nn}_k^{\top}\tilde{\Nn}_k+\lambda_k\Kn_k\right)^{-1}\tilde{\Nn}_k^{\top}\right\}\\\nonumber
   &=traza\left\{\tilde{\Nn}_k^{\top}\tilde{\Nn}_k \left(\tilde{\Nn}_k^{\top}\tilde{\Nn}_k+\lambda_k\Kn_k\right)^{-1}\right\}
 \end{align}
@@ -366,7 +367,7 @@ $$AIC(\lambda)=-2\ell_p(\tetn,\lambda)+2\{s+1+GLE(\lambda)\}$$
 
 # Inferencia
 
-## Media de los estimadores
+## Esperanza de los estimadores
 
 Se tiene de (\ref{beta.estimado}) que $\hat\betan_k=\left(\tilde{\Nn}_k^{\top}\tilde{\Nn}_k+ \lambda_k\Kn_k\right)^{-1}\tilde{\Nn}_k^{\top} \left(\ymn- \sum_{j=1;j\neq k}^s \tilde{\Nn}_j\betan_j\right)$, donde $\E[\ymn]=\sum_{j=1}^{s}\tilde{\Nn}_j\betan_j$, así,
 
@@ -378,8 +379,8 @@ Se tiene de (\ref{beta.estimado}) que $\hat\betan_k=\left(\tilde{\Nn}_k^{\top}\t
   &= \left(\tilde{\Nn}_k^{\top}\tilde{\Nn}_k+ \lambda_k\Kn_k\right)^{-1}\tilde{\Nn}_k^{\top}\tilde{\Nn}_k\betan_k
 \end{align}
 
-Es un estimador insesgado, sin embargo es posible escoger el $\lambda$ para disminuir el sesgo de los estimadores.
-*Observación.* Si $\lambda\rightarrow 0$ se tendrá un estimador insesgado $\E(\hat{\betan}_k)\rightarrow \betan$
+Es un estimador sesgado, sin embargo es posible escoger el $\lambda_k$ para disminuir el sesgo de los estimadores.
+*Observación.* Si $\lambda_k\rightarrow 0$ se tendrá un estimador insesgado $\E(\hat{\betan}_k)\rightarrow \betan$
 
 ## Matriz de Varianzas-Covarianzas
 
@@ -509,6 +510,32 @@ plot(fitVCM,select = 2,ylim = c(0.5,1.6),seWithMean = TRUE)
 ```
 
 La estimación de la intersección sugiere que es cero o casi nula, durante todo el período, lo que concuerda con la teoría económica. La pendiente estimada varía entre aproximadamente $1,0$ y $1,4$ durante este período. El modelo de regresión lineal simple se rechaza en favor del modelo de coeficientes variando, aunque el último proporciona solo una pequeña mejora en el ajuste medido por el $R^2-ajustado$.  
+
+## Residuos
+
+```{r}
+par(mfrow=c(1,3))
+hist(fitSLR$residuals,main="SLR")
+hist(fitNPR$residuals,main="NPR")
+hist(fitVCM$residuals,main="VCM")
+```
+
+```{r}
+library(PerformanceAnalytics)
+
+par(mfrow=c(1,3))
+chart.QQPlot(fitSLR$residuals,main="SLR")
+chart.QQPlot(fitNPR$residuals,main="NPR")
+chart.QQPlot(fitVCM$residuals,main="VCM")
+```
+
+```{r}
+library(visreg)
+visreg(fitSLR)
+visreg(fitNPR)
+par(mfrow=c(1,2))
+visreg(fitVCM)
+```
 
 
 \newpage

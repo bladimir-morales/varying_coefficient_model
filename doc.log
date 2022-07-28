@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.27)  28 JUL 2022 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.27)  28 JUL 2022 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -449,7 +449,7 @@ Package hyperref Info: Link coloring OFF on input line 136.
 \@outlinefile=\write4
 \openout4 = `doc.out'.
 
-<logo2.png, id=100, 227.85126pt x 341.275pt>
+<logo2.png, id=104, 227.85126pt x 341.275pt>
 File: logo2.png Graphic file (type png)
 <use logo2.png>
 Package pdftex.def Info: logo2.png  used on input line 138.
@@ -489,11 +489,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) (./doc.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 2.
+(Font)              <10> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2.
+(Font)              <5> on input line 3.
 [1
 
 {c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo2.png>])
@@ -502,82 +502,82 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [2]
 
-LaTeX Warning: Command \' invalid in math mode on input line 249.
+LaTeX Warning: Command \' invalid in math mode on input line 248.
 
 [3
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.270 ...imits^{(s)}_i (t_{s_i})\beta_s(t_{s_i})\]
+l.269 ...imits^{(s)}_i (t_{s_i})\beta_s(t_{s_i})\]
                                                   ] [4] [5] [6]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 505.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 503.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [7] [8] [9] [10]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 690.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 692.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 718.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 720.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<doc_files/figure-latex/unnamed-chunk-2-1.pdf, id=249, 469.755pt x 325.215pt>
+) [11]
+<doc_files/figure-latex/unnamed-chunk-2-1.pdf, id=268, 469.755pt x 325.215pt>
 File: doc_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use doc_files/figure-latex/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 743.
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 745.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[11] [12 <./doc_files/figure-latex/unnamed-chunk-2-1.pdf>]
-<doc_files/figure-latex/unnamed-chunk-3-1.pdf, id=275, 469.755pt x 325.215pt>
+[12 <./doc_files/figure-latex/unnamed-chunk-2-1.pdf>]
+<doc_files/figure-latex/unnamed-chunk-3-1.pdf, id=281, 469.755pt x 325.215pt>
 File: doc_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use doc_files/figure-latex/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-3-1.pdf  used on input line 795.
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-3-1.pdf  used on input line 797.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [13 <./doc_files/figure-latex/unnamed-chunk-3-1.pdf>] [14]
-<doc_files/figure-latex/unnamed-chunk-9-1.pdf, id=291, 469.755pt x 325.215pt>
+<doc_files/figure-latex/unnamed-chunk-9-1.pdf, id=297, 469.755pt x 325.215pt>
 File: doc_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use doc_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 939.
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 941.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[15 <./doc_files/figure-latex/unnamed-chunk-9-1.pdf>] [16]
-<doc_files/figure-latex/unnamed-chunk-13-1.pdf, id=305, 469.755pt x 325.215pt>
+[15] [16 <./doc_files/figure-latex/unnamed-chunk-9-1.pdf>]
+<doc_files/figure-latex/unnamed-chunk-13-1.pdf, id=311, 469.755pt x 325.215pt>
 File: doc_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
 <use doc_files/figure-latex/unnamed-chunk-13-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-13-1.pdf  used on input line 1034.
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-13-1.pdf  used on input line 1036.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-<doc_files/figure-latex/unnamed-chunk-13-2.pdf, id=306, 469.755pt x 325.215pt>
+<doc_files/figure-latex/unnamed-chunk-13-2.pdf, id=312, 469.755pt x 325.215pt>
 File: doc_files/figure-latex/unnamed-chunk-13-2.pdf Graphic file (type pdf)
 <use doc_files/figure-latex/unnamed-chunk-13-2.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-13-2.pdf  used on input line 1035.
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-13-2.pdf  used on input line 1037.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1034--1036
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1038
 [][]
  []
 
-[17 <./doc_files/figure-latex/unnamed-chunk-13-1.pdf>]
-<doc_files/figure-latex/unnamed-chunk-14-1.pdf, id=316, 469.755pt x 325.215pt>
+[17] [18 <./doc_files/figure-latex/unnamed-chunk-13-1.pdf>]
+<doc_files/figure-latex/unnamed-chunk-14-1.pdf, id=326, 469.755pt x 325.215pt>
 File: doc_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 <use doc_files/figure-latex/unnamed-chunk-14-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-14-1.pdf  used on input line 1045.
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-14-1.pdf  used on input line 1047.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[18 <./doc_files/figure-latex/unnamed-chunk-13-2.pdf>] [19 <./doc_files/figure-latex/unnamed-chunk-14-1.pdf>] [20] (./doc.aux)
+[19 <./doc_files/figure-latex/unnamed-chunk-13-2.pdf>] [20 <./doc_files/figure-latex/unnamed-chunk-14-1.pdf>] [21] (./doc.aux)
 Package rerunfilecheck Info: File `doc.out' has not changed.
-(rerunfilecheck)             Checksum: 87AE88F7764CD5E390E7C4D44C4E455B;4178.
+(rerunfilecheck)             Checksum: 47644013268A7B94C38965E0C8835344;4426.
  ) 
 Here is how much of TeX's memory you used:
- 13739 strings out of 479983
- 222263 string characters out of 5885900
- 564429 words of memory out of 5000000
- 31449 multiletter control sequences out of 15000+600000
- 537304 words of font info for 154 fonts, out of 8000000 for 9000
+ 13736 strings out of 479983
+ 222280 string characters out of 5885900
+ 564484 words of memory out of 5000000
+ 31451 multiletter control sequences out of 15000+600000
+ 536972 words of font info for 150 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,14n,77p,1000b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,14n,77p,1000b,623s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on doc.pdf (20 pages, 635254 bytes).
+Output written on doc.pdf (21 pages, 636839 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 380 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 37092 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 389 compressed objects within 4 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 37100 words of extra memory for PDF output out of 42996 (max. 10000000)
 
