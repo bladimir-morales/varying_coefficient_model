@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.27)  28 JUL 2022 03:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.27)  28 JUL 2022 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -233,6 +233,27 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
+)
+\cslhangindent=\skip54
+\csllabelwidth=\skip55
+\cslentryspacingunit=\skip56
+(c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count280
+\calc@Bcount=\count281
+\calc@Adimen=\dimen163
+\calc@Bdimen=\dimen164
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count282
+\calc@Cskip=\skip59
+) (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip60
+\thanksmargin=\skip61
+\droptitle=\skip62
 ) (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
@@ -266,11 +287,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count280
+\c@section@level=\count283
 )
-\@linkdim=\dimen163
-\Hy@linkcounter=\count281
-\Hy@pagecounter=\count282
+\@linkdim=\dimen165
+\Hy@linkcounter=\count284
+\Hy@pagecounter=\count285
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -280,7 +301,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count283
+\Hy@SavedSpaceFactor=\count286
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -294,21 +315,21 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4408.
-\c@Hy@tempcnt=\count284
+\c@Hy@tempcnt=\count287
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4746.
-\XeTeXLinkMargin=\dimen164
+\XeTeXLinkMargin=\dimen166
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count285
-\Field@Width=\dimen165
-\Fld@charsize=\dimen166
+\Fld@menulength=\count288
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
 Package hyperref Info: Hyper figures OFF on input line 6024.
 Package hyperref Info: Link nesting OFF on input line 6029.
 Package hyperref Info: Hyper index ON on input line 6032.
@@ -320,9 +341,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6054.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count286
-\c@Item=\count287
-\c@Hfootnote=\count288
+\Hy@abspage=\count289
+\c@Item=\count290
+\c@Hfootnote=\count291
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -331,8 +352,8 @@ File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count289
-\c@bookmark@seq@number=\count290
+\Fld@listcount=\count292
+\c@bookmark@seq@number=\count293
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -340,44 +361,44 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip54
+\Hy@SectionHShift=\skip63
 ) (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count291
+\l__color_backend_stack_int=\count294
 \l__pdf_internal_box=\box55
 ) (./doc.aux)
 \openout1 = `doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Info: Redefining \microtypecontext on input line 110.
-Package microtype Info: Applying patch `item' on input line 110.
-Package microtype Info: Applying patch `toc' on input line 110.
-Package microtype Info: Applying patch `eqnum' on input line 110.
-Package microtype Info: Applying patch `footnote' on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Info: Redefining \microtypecontext on input line 136.
+Package microtype Info: Applying patch `item' on input line 136.
+Package microtype Info: Applying patch `toc' on input line 136.
+Package microtype Info: Applying patch `eqnum' on input line 136.
+Package microtype Info: Applying patch `footnote' on input line 136.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 110.
+LaTeX Info: Redefining \showhyphens on input line 136.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -423,142 +444,140 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 110.
+Package hyperref Info: Link coloring OFF on input line 136.
 (./doc.out) (./doc.out)
 \@outlinefile=\write4
 \openout4 = `doc.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 112.
+<logo2.png, id=100, 227.85126pt x 341.275pt>
+File: logo2.png Graphic file (type png)
+<use logo2.png>
+Package pdftex.def Info: logo2.png  used on input line 138.
+(pdftex.def)             Requested size: 144.75346pt x 216.81136pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 138.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 112.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 138.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 112.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 138.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 112.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 138.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 112.
+(Font)              <12> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 112.
+(Font)              <8> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 112.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112.
+(Font)              <6> on input line 138.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 138.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 138.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
+) (./doc.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 162.
+(Font)              <10> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 162.
+(Font)              <7> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 162.
-
-LaTeX Warning: Command \' invalid in math mode on input line 208.
-
+(Font)              <5> on input line 2.
 [1
 
-{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}) has been already used, duplicate ignored
+{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo2.png>])
+\tf@toc=\write5
+\openout5 = `doc.toc'.
+
+[2]
+
+LaTeX Warning: Command \' invalid in math mode on input line 249.
+
+[3
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.229 \[
-        \eta_{t} =\beta_0(t_i) +\mathop{\rm x}\nolimits^{(1)}_i(t_{1_i})\bet...] [2] [3] [4]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 465.
+l.270 ...imits^{(s)}_i (t_{s_i})\beta_s(t_{s_i})\]
+                                                  ] [4] [5] [6]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 505.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5] [6]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 522.
+) [7] [8] [9] [10]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 690.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 543.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 718.
 (c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<doc_files/figure-latex/unnamed-chunk-1-1.pdf, id=141, 469.755pt x 325.215pt>
-File: doc_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
-<use doc_files/figure-latex/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-1-1.pdf  used on input line 559.
+<doc_files/figure-latex/unnamed-chunk-2-1.pdf, id=249, 469.755pt x 325.215pt>
+File: doc_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use doc_files/figure-latex/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 743.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[7]
-<doc_files/figure-latex/unnamed-chunk-1-2.pdf, id=153, 469.755pt x 325.215pt>
-File: doc_files/figure-latex/unnamed-chunk-1-2.pdf Graphic file (type pdf)
-<use doc_files/figure-latex/unnamed-chunk-1-2.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-1-2.pdf  used on input line 567.
+[11] [12 <./doc_files/figure-latex/unnamed-chunk-2-1.pdf>]
+<doc_files/figure-latex/unnamed-chunk-3-1.pdf, id=275, 469.755pt x 325.215pt>
+File: doc_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use doc_files/figure-latex/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-3-1.pdf  used on input line 795.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[8 <./doc_files/figure-latex/unnamed-chunk-1-1.pdf>]
-<doc_files/figure-latex/unnamed-chunk-1-3.pdf, id=163, 469.755pt x 325.215pt>
-File: doc_files/figure-latex/unnamed-chunk-1-3.pdf Graphic file (type pdf)
-<use doc_files/figure-latex/unnamed-chunk-1-3.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-1-3.pdf  used on input line 575.
+[13 <./doc_files/figure-latex/unnamed-chunk-3-1.pdf>] [14]
+<doc_files/figure-latex/unnamed-chunk-9-1.pdf, id=291, 469.755pt x 325.215pt>
+File: doc_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use doc_files/figure-latex/unnamed-chunk-9-1.pdf>
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 939.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[9 <./doc_files/figure-latex/unnamed-chunk-1-2.pdf>]
-<doc_files/figure-latex/unnamed-chunk-1-4.pdf, id=173, 469.755pt x 325.215pt>
-File: doc_files/figure-latex/unnamed-chunk-1-4.pdf Graphic file (type pdf)
-<use doc_files/figure-latex/unnamed-chunk-1-4.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-1-4.pdf  used on input line 583.
+[15 <./doc_files/figure-latex/unnamed-chunk-9-1.pdf>] [16]
+<doc_files/figure-latex/unnamed-chunk-13-1.pdf, id=305, 469.755pt x 325.215pt>
+File: doc_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
+<use doc_files/figure-latex/unnamed-chunk-13-1.pdf>
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-13-1.pdf  used on input line 1034.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[10 <./doc_files/figure-latex/unnamed-chunk-1-3.pdf>]
-<doc_files/figure-latex/unnamed-chunk-1-5.pdf, id=184, 469.755pt x 325.215pt>
-File: doc_files/figure-latex/unnamed-chunk-1-5.pdf Graphic file (type pdf)
-<use doc_files/figure-latex/unnamed-chunk-1-5.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-1-5.pdf  used on input line 591.
+<doc_files/figure-latex/unnamed-chunk-13-2.pdf, id=306, 469.755pt x 325.215pt>
+File: doc_files/figure-latex/unnamed-chunk-13-2.pdf Graphic file (type pdf)
+<use doc_files/figure-latex/unnamed-chunk-13-2.pdf>
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-13-2.pdf  used on input line 1035.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 591--615
+Underfull \hbox (badness 10000) in paragraph at lines 1034--1036
 [][]
  []
 
-[11 <./doc_files/figure-latex/unnamed-chunk-1-4.pdf>] [12 <./doc_files/figure-latex/unnamed-chunk-1-5.pdf>] [13]
-<doc_files/figure-latex/unnamed-chunk-4-1.pdf, id=209, 469.755pt x 325.215pt>
-File: doc_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
-<use doc_files/figure-latex/unnamed-chunk-4-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-4-1.pdf  used on input line 732.
+[17 <./doc_files/figure-latex/unnamed-chunk-13-1.pdf>]
+<doc_files/figure-latex/unnamed-chunk-14-1.pdf, id=316, 469.755pt x 325.215pt>
+File: doc_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
+<use doc_files/figure-latex/unnamed-chunk-14-1.pdf>
+Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-14-1.pdf  used on input line 1045.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 732--746
-[][]
- []
-
-[14 <./doc_files/figure-latex/unnamed-chunk-4-1.pdf>]
-<doc_files/figure-latex/unnamed-chunk-6-1.pdf, id=219, 469.755pt x 325.215pt>
-File: doc_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use doc_files/figure-latex/unnamed-chunk-6-1.pdf>
-Package pdftex.def Info: doc_files/figure-latex/unnamed-chunk-6-1.pdf  used on input line 816.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[15] [16 <./doc_files/figure-latex/unnamed-chunk-6-1.pdf>] (./doc.aux)
+[18 <./doc_files/figure-latex/unnamed-chunk-13-2.pdf>] [19 <./doc_files/figure-latex/unnamed-chunk-14-1.pdf>] [20] (./doc.aux)
 Package rerunfilecheck Info: File `doc.out' has not changed.
-(rerunfilecheck)             Checksum: 5CAAEDE3F2C8AE2CFD0C1CEFB4D7A503;2129.
+(rerunfilecheck)             Checksum: 87AE88F7764CD5E390E7C4D44C4E455B;4178.
  ) 
 Here is how much of TeX's memory you used:
- 13480 strings out of 479983
- 218050 string characters out of 5885900
- 563007 words of memory out of 5000000
- 31249 multiletter control sequences out of 15000+600000
- 536712 words of font info for 148 fonts, out of 8000000 for 9000
+ 13739 strings out of 479983
+ 222263 string characters out of 5885900
+ 564429 words of memory out of 5000000
+ 31449 multiletter control sequences out of 15000+600000
+ 537304 words of font info for 154 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,14n,77p,1000b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,14n,77p,1000b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/ACER/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on doc.pdf (16 pages, 815363 bytes).
+Output written on doc.pdf (20 pages, 635254 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 266 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 37004 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 37092 words of extra memory for PDF output out of 42996 (max. 10000000)
 
