@@ -1,0 +1,556 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Modelos con Coeficientes Variando},
+  pdfauthor={Bladimir Valerio Morales Torrez},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Modelos con Coeficientes Variando}
+\author{Bladimir Valerio Morales Torrez}
+\date{Julio 2022}
+
+\begin{document}
+\maketitle
+
+\hypertarget{introducciuxf3n}{%
+\section{Introducción}\label{introducciuxf3n}}
+
+Los modelos aditivos generalizados (modelos no paramétricos), propuestos
+por @Hastie\_Tibshirani\_1986 dan a conocer una nueva clase de modelos
+de regresión, extendiendo y flexibilizando el modelo de regresión
+clásico, reemplazando la función lineal por una función aditiva suave y
+no paramétricas, la cual es estimada por el algoritmo de puntuación
+local (local scoring algorithm).\\
+Es así que, @Hastie\_Tibshirani\_1993, proponen otra generalización al
+modelo de regresión lineal clásico, denominados modelos de coeficientes
+variando (Varying-Coefficient Models VCMs), los cuales contienen
+regresores lineales pero permiten que sus coeficientes cambien
+suavemente con el valor de otras variables, que se denominan
+``modificadores de efecto''.
+
+\hypertarget{marco-teuxf3rico}{%
+\section{Marco Teórico}\label{marco-teuxf3rico}}
+
+\hypertarget{el-modelo}{%
+\subsection{El modelo}\label{el-modelo}}
+
+Supongamos que se tiene una variable aleatoria \(Y\) cuya distribución
+depende de un parámetro \(\eta\) que será el predictor lineal y se
+relaciona con la media \(\mu=\mathbb{E}(Y)\) mediante la función enlace
+\(\eta=g(\mu)\), el modelo lineal generalizado con coeficientes variando
+se puede representar como: \begin{eqnarray}\label{modelo.general}
+\eta_i=\beta_0+x_i^{1}\beta_1(t_{1_i})+\cdots+x_i^p\beta_p(t_{p_i})
+\end{eqnarray} Donde los \(t_1,\cdots,t_p\) cambian los coeficientes de
+las covariables \(x^1,\cdots,x^p\) a través de las funciones
+\(\beta_1,\cdots,\beta_p\). La dependencia de \(\beta_j\) en \(t_j\),
+con \(j=1,...,p\) implica un tipo de interacción entre \(t_j\) y
+\(x^j\), donde la variable \(t_j\) puede no ser tan diferente a \(x^j\),
+pero también \(t_j\) puede ser una variable especial como el tiempo.\\
+Si se toma el modelo Gaussiano, donde \(g(\mu)=\mu\) y la variable
+aleatoria \(Y\) tiene distribución normal con media \(\eta\), el modelo
+(\ref{modelo.general}) es de la forma
+
+\begin{eqnarray}\label{modelo.normal}
+Y_i=\beta_0+x_i^{1}\beta_1(t_{1_i})+\cdots+x_i^p\beta_p(t_{p_i})+\varepsilon_i
+\end{eqnarray}
+
+donde \(\mathbb{E}(\varepsilon)=0\) y \(Var(\varepsilon)=\sigma^2\)
+
+\hypertarget{casos-del-modelo}{%
+\subsubsection{Casos del modelo}\label{casos-del-modelo}}
+
+El modelo de coeficientes variando generaliza los siguientes tipos de
+modelos: a) Si \(\beta_j(t_j)=\beta_j\) una función constante, entonces
+ese término es lineal en \(x^j\). Si todos los términos son lineales se
+reduce a un modelo lineal generalizado clásico.\\
+b) Si \(x^j=c\) con \(c\) constante entonces el \(j-ésimo\) término es
+\(\beta_j(t_j)\) una función no conocida. Si todos los términos tienen
+esta característica se tiene un modelo aditivo generalizado.\\
+c) Una función lineal \(\beta_j(t_j)=\beta_jt_j\) produce una
+interacción de la forma \(\beta_jx^jt_j\).\\
+d) En el término del modelo \(x\beta(t)\), cuando \(x\) es una variable
+binaria (\(0-1\)). Supongamos que hay un término \(\beta_0(t)\) en el
+modelo. Esto equivale a tener una curva separada correspondiente a cada
+uno de los dos valores de \(x\).\\
+e) A menudo las \(t_j\) serán la misma variable, como puede ser la edad
+o el tiempo, que podría modificar los efectos de \(x^1,...,x^p\).
+Supongamos que, los datos consisten en mediciones repetidas de las
+variables \(y, x^1 , ..., x^p\) sobre \(n\) puntos de tiempo
+\(t\in(t_1,...,t_n\) ) . Entonces podríamos modelar esto a lo largo del
+tiempo
+\[\eta_{t,i} =\beta_0(t_i) +x^1 (t_{1_i})\beta_1(t_{1_i}) + ... +x^p (t_{p_i})\beta_p(t_{p_i})\]
+Que es llamado como \emph{modelo lineal generalizado dinámico} o
+\emph{condicionalmente paramétricos}\\
+f) La variable modificante \(t_j\) puede ser la misma que \(x^j\), por
+simplicidad suponemos que es un modelo lineal normal con un solo
+término. \[y_i =x_i \beta_j(x_i) + \varepsilon\] Este es un modelo común
+de suavizamiento o regresión no paramétrica de \(Y\) versus \(X\).\\
+g) Cada \(t_j\) puede tener un valor escalar o vectorial.\\
+h) En todos los casos anteriores, hay muchas formas de modelar las
+funciones \(\beta_j(t_j)\). Por ejemplo, podríamos usar representaciones
+paramétricas flexibles tales como polinomios, series de Fourier o
+polinomios por partes, o de manera más general funciones no
+paramétricas, mediante el uso de métodos kernel, penalización o
+formulaciones bayesianas estocásticas.
+
+\hypertarget{matricialmente}{%
+\subsubsection{Matricialmente}\label{matricialmente}}
+
+\hypertarget{estimaciuxf3n}{%
+\subsection{Estimación}\label{estimaciuxf3n}}
+
+El modelo (\ref{modelo.general}), es general para la mayoría de las
+aplicaciones, ya que no se imponen restricciones a las funciones de los
+coeficientes. La estimación no paramétrica sin restricciones de estas
+funciones probablemente no sería posible, salvo en el caso de diseños
+especiales. En el caso de los datos observacionales, es probable que se
+vea un valor diferente para cada \(t\), en cada muestra.\\
+Por esta razón, se impone restricciones a las funciones de los
+coeficientes variando, por ejemplo, a trozos con forma paramétrica
+conocida o bien suave pero no paramétrica. Una aproximación sería a
+través de bases paramétricas como funciones polinómicas o
+trigonométricas. Normalmente, éstas no proporcionan suficiente
+flexibilidad y adaptabilidad local, y es probable que un conjunto de
+bases de splines de regresión es preferible.\\
+Se procederá igual que con un modelo lineal, sólo que con varias
+variables definidas por los productos de cada \(x\), y las bases de
+\(\beta_j(t_j)\) con este enfoque, las herramientas inferenciales
+estándar sirven para evaluar conjuntos de coeficientes, puntos de
+influencia, etc. Las características de las curvas ajustadas pueden ser
+muy diferentes con pequeños cambios en las posiciones de los nudos,
+sobre todo si sólo se pueden permitir unos pocos.\\
+En este trabajo se mostrará el procedimiento para el modelo
+(\ref{modelo.normal}) ya que para el modelo (\ref{modelo.general})
+incluyen procedimientos diferentes como el algoritmo de tipo
+NewtonRaphson.
+
+\hypertarget{muxednimos-cuadrados-penalizados}{%
+\subsubsection{Mínimos Cuadrados
+Penalizados}\label{muxednimos-cuadrados-penalizados}}
+
+Se tiene
+\[\mathbb{E}\left\{y_i-\sum_{j=1}^{p}x_i^j \beta_j(t_{j_i})\right\}^2\]
+Se condiciona en \(t_j\), es una condición suficiente para la solución:
+
+\[\mathbb{E}\left\{x^k_i\left\{y_i-\sum_{i=1\\i\neq k}^{p} x_i^j \beta_j(t_{j_i}) \right\}|t_k\right\}=0 \hspace{1cm}k=1,...,p\]
+
+La ecuación (6) es una relación de dos esperanzas condicionales y puede
+verse como una media ponderada condicional, en la que las ponderaciones
+condicionales vienen dadas por el término XJ; el término en el
+denominador garantiza que las ponderaciones se integren en 1. Existe una
+ecuación ecuación similar para cada función (3i'' j = 1, \ldots, p, y el
+conjunto de p ecuaciones debe resolver simultáneamente para la función
+(3i'' j = 1 \ldots, p, como una estimación flexible de una esperanza
+condicional, esto sugiere que cada función (3j puede estimarse de forma
+iterativa ``de uno en uno'' mediante el alisado \{Y-I:ki
+``jXk(3k(Rk)\}IXj en R j, con pesos XJ. Esta es la idea central del
+marco formal que se discute a continuación
+
+\hypertarget{aplicaciuxf3n}{%
+\section{Aplicación}\label{aplicaciuxf3n}}
+
+Se utilizará los datos de los rendimientos diarios de las acciones de la
+General Electric Company y el índice de Standard \& Poor's 500 (S\&P
+500). Los están en el \texttt{data.frame} \emph{capm} en el paquete
+\texttt{HRW}. La variable \texttt{Date} se tiene desde el 1 de noviembre
+de 1993 al 31 de marzo de 2003, por lo que hay más de nueve años de
+datos. Si \(P_t\) es el precio de una acción en el día \(t\), entonces
+el rendimiento logarítmico de ese día es \(log(\frac{P_t}{P_{t−1}} )\).
+El exceso de rendimiento logarítmico es el rendimiento logarítmico menos
+la tasa de interés libre de riesgo, generalmente considerada como la
+tasa de facturación del Tesoro a corto plazo.\\
+El siguiente código calcula el rendimiento logarítmico excedente tanto
+de las acciones de General Electric Company como del índice S\&P 500:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(HRW) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'HRW' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(capm)}
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{dim}\NormalTok{(capm)[}\DecValTok{1}\NormalTok{]}
+\CommentTok{\#riesgo.libre=riskfree}
+\NormalTok{riesgo.libre }\OtherTok{\textless{}{-}}\NormalTok{ capm}\SpecialCharTok{$}\NormalTok{Close.tbill[}\DecValTok{2}\SpecialCharTok{:}\NormalTok{n]}\SpecialCharTok{/}\NormalTok{(}\DecValTok{100}\SpecialCharTok{*}\DecValTok{365}\NormalTok{)}
+\CommentTok{\#elrGE=rend.log.ex.GE}
+\NormalTok{rend.log.ex.GE }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(}\FunctionTok{log}\NormalTok{(capm}\SpecialCharTok{$}\NormalTok{Close.ge))}\SpecialCharTok{{-}}\NormalTok{riesgo.libre}
+\NormalTok{rend.log.ex.SP500 }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(}\FunctionTok{log}\NormalTok{(capm}\SpecialCharTok{$}\NormalTok{Close.sp500))}\SpecialCharTok{{-}}\NormalTok{riesgo.libre}
+
+\FunctionTok{plot}\NormalTok{(rend.log.ex.GE)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doc_CVM_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(rend.log.ex.SP500)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doc_CVM_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(rend.log.ex.GE,}\AttributeTok{freq =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doc_CVM_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(rend.log.ex.SP500,}\AttributeTok{freq =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doc_CVM_files/figure-latex/unnamed-chunk-1-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(rend.log.ex.GE,rend.log.ex.SP500)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doc_CVM_files/figure-latex/unnamed-chunk-1-5.pdf}
+
+Donde \texttt{capm\$Close.sp500} y \texttt{capm\$Close.ge} son los
+precios de cierre diarios y \texttt{capm\$Close.tbill} es la tasa diaria
+de facturación del Tesoro expresada como porcentaje. En el código,
+\texttt{capm\$Close.tbill} primero se divide por \(100\) para convertir
+de un porcentaje a una fracción y luego se divide por \(365\) para
+convertir de una tasa anual a una tasa diaria. Por eso,
+\texttt{rend.log.ex.GE} y \texttt{rend.log.ex.SP500} son los
+rendimientos logarítmicos excedentes diarios de las acciones de General
+Electric y en el índice S\&P 500, respectivamente.\\
+Uno de los supuestos del modelo de fijación de precios de activos de
+capital en finanzas es que los rendimientos logarítmicos excedentes
+medios de una acción dependen linealmente de los rendimientos
+logarítmicos excedentes del mercado. El rendimiento del índice S\&P 500
+suele sera utilizado como proxy de la rentabilidad del mercado. Por lo
+general, el modelo de regresión lineal simple, se ajusta solo a datos
+recientes, ya que se espera que la pendiente cambie lentamente a lo
+largo del tiempo. Una alternativa es ajustar un modelo de coeficiente
+variando a todos los datos, con el intercepto y pendiente dependiendo de
+la fecha. Hacer esto proporcionaría evidencia como y con qué rapidez
+está cambiando la pendiente. La teoría económica predice que el
+intercepto es cero, por lo que se espera que el intercepto estimado sea
+insignificante. Primero, ajustamos un modelo de regresión lineal simple
+a todos los datos usando:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(mgcv)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'mgcv' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: nlme
+\end{verbatim}
+
+\begin{verbatim}
+## This is mgcv 1.8-40. For overview type 'help("mgcv-package")'.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fitSLR }\OtherTok{\textless{}{-}} \FunctionTok{gam}\NormalTok{(rend.log.ex.GE }\SpecialCharTok{\textasciitilde{}}\NormalTok{ rend.log.ex.SP500)}
+\FunctionTok{summary}\NormalTok{(fitSLR)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Family: gaussian 
+## Link function: identity 
+## 
+## Formula:
+## rend.log.ex.GE ~ rend.log.ex.SP500
+## 
+## Parametric coefficients:
+##                    Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       0.0002971  0.0002628   1.131    0.258    
+## rend.log.ex.SP500 1.2441346  0.0227404  54.710   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## 
+## R-sq.(adj) =  0.559   Deviance explained = 55.9%
+## GCV = 0.00016324  Scale est. = 0.0001631  n = 2362
+\end{verbatim}
+
+Para verificar si un modelo lineal es apropiado, ajustamos el modelo de
+regresión no paramétrico del rendimiento logarítmico excedente de las
+acciones de General Electric que es una función suave e invariable en el
+tiempo del rendimiento logarítmico excedente del índice S\&P 500. este
+modelo en comparación con el modelo lineal simple a través de una prueba
+\(F\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fitNPR }\OtherTok{\textless{}{-}} \FunctionTok{gam}\NormalTok{(rend.log.ex.GE }\SpecialCharTok{\textasciitilde{}} \FunctionTok{s}\NormalTok{(rend.log.ex.SP500),}\AttributeTok{method =} \StringTok{"REML"}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(fitNPR)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Family: gaussian 
+## Link function: identity 
+## 
+## Formula:
+## rend.log.ex.GE ~ s(rend.log.ex.SP500)
+## 
+## Parametric coefficients:
+##              Estimate Std. Error t value Pr(>|t|)  
+## (Intercept) 0.0004786  0.0002612   1.832   0.0671 .
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Approximate significance of smooth terms:
+##                        edf Ref.df     F p-value    
+## s(rend.log.ex.SP500) 6.919  8.032 380.5  <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.564   Deviance explained = 56.5%
+## -REML = -6940.1  Scale est. = 0.00016116  n = 2362
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{anova}\NormalTok{(fitSLR,fitNPR,}\AttributeTok{test =} \StringTok{"F"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Analysis of Deviance Table
+## 
+## Model 1: rend.log.ex.GE ~ rend.log.ex.SP500
+## Model 2: rend.log.ex.GE ~ s(rend.log.ex.SP500)
+##   Resid. Df Resid. Dev     Df  Deviance      F    Pr(>F)    
+## 1    2360.0    0.38492                                      
+## 2    2352.2    0.37939 7.7822 0.0055265 4.4064 3.272e-05 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+La prueba \(F\) rechaza el modelo de regresión lineal simple. Sin
+embargo, el tamaño de la muestra es bastante grande ya que hubo \(2362\)
+días de retornos y por lo tanto, hay un poder sustancial para detectar
+desviaciones de la linealidad.
+
+La gráfica de la regresión no paramétrica fit(fitNPR) se desvía solo
+ligeramente de una línea recta, al menos sobre el rango de la mayor
+parte de los datos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(fitNPR)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doc_CVM_files/figure-latex/unnamed-chunk-4-1.pdf}
+Además, el ajuste suave tiene solo un poco más de \(R^2-ajustado\),
+\(56,4\%\), en comparación con el del modelo lineal, \(55,9\%\). Cuando
+recurrimos a modelos de coeficientes variando, como suposición de
+trabajo supondremos que la regresión de los rendimientos logarítmicos
+excedentes de General Electric sobre los rendimientos logarítmicos
+excedentes del mercado es lineal, pero la intersección y la pendiente
+varían con el tiempo.\\
+Ahora, se ajusta y se grafica el modelo de coeficientes variando y lo
+comparamos con el modelo lineal de coeficientes constantes mediante una
+prueba \(F\). En el modelo de coeficientes variando, el intercepto y la
+pendiente de la regresión lineal del logaritmo de retorno excedente de
+General Electric con el excedente de rendimiento logarítmico del índice
+S\&P 500 son funciones suaves en el tiempo (años), almacenada como la
+variable \(t\):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dayNums }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{))}\SpecialCharTok{/}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{)}
+\NormalTok{startTime }\OtherTok{\textless{}{-}} \DecValTok{1993} \SpecialCharTok{+} \DecValTok{11}\SpecialCharTok{/}\DecValTok{12} \CommentTok{\#Noviembre}
+\NormalTok{endTime }\OtherTok{\textless{}{-}} \DecValTok{2003} \SpecialCharTok{+} \DecValTok{3}\SpecialCharTok{/}\DecValTok{12} \CommentTok{\#Marzo}
+\NormalTok{t }\OtherTok{\textless{}{-}}\NormalTok{ startTime }\SpecialCharTok{+}\NormalTok{ (endTime }\SpecialCharTok{{-}}\NormalTok{ startTime)}\SpecialCharTok{*}\NormalTok{dayNums}
+\NormalTok{fitVCM }\OtherTok{\textless{}{-}} \FunctionTok{gam}\NormalTok{(rend.log.ex.GE }\SpecialCharTok{\textasciitilde{}} \FunctionTok{s}\NormalTok{(t) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(t,}\AttributeTok{by =}\NormalTok{ rend.log.ex.SP500), }\AttributeTok{method =} \StringTok{"REML"}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(fitVCM)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Family: gaussian 
+## Link function: identity 
+## 
+## Formula:
+## rend.log.ex.GE ~ s(t) + s(t, by = rend.log.ex.SP500)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error t value Pr(>|t|)
+## (Intercept) 0.000331   0.000262   1.263    0.207
+## 
+## Approximate significance of smooth terms:
+##                          edf Ref.df     F p-value    
+## s(t)                   1.007  1.013   0.0       1    
+## s(t):rend.log.ex.SP500 6.958  8.080 377.3  <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.564   Deviance explained = 56.5%
+## -REML = -6935.9  Scale est. = 0.00016129  n = 2362
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{anova}\NormalTok{(fitSLR,fitVCM,}\AttributeTok{test =} \StringTok{"F"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Analysis of Deviance Table
+## 
+## Model 1: rend.log.ex.GE ~ rend.log.ex.SP500
+## Model 2: rend.log.ex.GE ~ s(t) + s(t, by = rend.log.ex.SP500)
+##   Resid. Df Resid. Dev     Df  Deviance      F    Pr(>F)    
+## 1    2360.0    0.38492                                      
+## 2    2350.9    0.37953 9.0935 0.0053903 3.6751 0.0001303 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+Las funciones de intersección y pendiente se representan en la siguiente
+gráfica. El argumento seleccionado de gam() se usa para seleccionar qué
+componente trazar. El gráfico de código (fitVCM) sin el uso de
+seleccionar trazaría tanto la intersección como la pendiente pero usaría
+la misma escala en el eje y, lo cual no permitiría especificar valores
+separados de \texttt{ylab} para las dos parcelas. El argumento
+\texttt{seWithMean\ =\ TRUE} se usa para especificar que los intervalos
+de confianza deben incluir la incertidumbre sobre la media.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(fitVCM,}\AttributeTok{select =} \DecValTok{1}\NormalTok{,}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.001}\NormalTok{,}\FloatTok{0.001}\NormalTok{),}\AttributeTok{seWithMean =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(fitVCM,}\AttributeTok{select =} \DecValTok{2}\NormalTok{,}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{1.6}\NormalTok{),}\AttributeTok{seWithMean =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doc_CVM_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+La estimación de la intersección sugiere que la intersección fue cero o
+casi nula, durante todo el período, lo que concuerda con la teoría
+económica. La pendiente estimada varía entre aproximadamente \(1,0\) y
+\(1,4\) durante este período. El modelo de regresión lineal simple se
+rechaza en favor del modelo de coeficientes variando, aunque el último
+proporciona solo una pequeña mejora en el ajuste medido por el
+\(R^2-ajustado\).
+
+\end{document}

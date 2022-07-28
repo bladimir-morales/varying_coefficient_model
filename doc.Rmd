@@ -5,6 +5,34 @@ date: "Julio 2022"
 output: pdf_document
 ---
 
+\newcommand{\wn}{{\bf w}}
+\newcommand{\In}{{\bf I}}
+\newcommand{\Wn}{{\bf W}}
+\newcommand{\Nn}{{\bf N}}
+\newcommand{\yn}{{\bf y}}
+\newcommand{\zn}{{\bf z}}
+\newcommand{\Yn}{{\bf Y}}
+\newcommand{\Xn}{{\bf X}}
+\newcommand{\Kn}{{\bf K}}
+\newcommand{\Qn}{{\bf Q}}
+\newcommand{\Rn}{{\bf R}}
+\newcommand{\ymn}{{\bf y}}
+\newcommand{\Un}{{\bf U}}
+
+
+\def \x {\mathop{\rm x}\nolimits}
+\def \y {\mathop{\rm y}\nolimits}
+\def \t {\mathop{\rm t}\nolimits}
+\def \diag {\mathop{\rm diag}\nolimits}
+
+\newcommand{\tetn}{{\mbox{\boldmath $\theta$}}}
+\newcommand{\betan}{{\mbox{\boldmath $\beta$}}}
+\newcommand{\omegan}{{\mbox{\boldmath $\omega$}}}
+\newcommand{\varepsilonn}{{\mbox{\boldmath $\varepsilon$}}}
+
+\def\R{{\rm I\! R}}
+\def\E{{\rm I\! E}}
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -18,22 +46,321 @@ Es así que,  @Hastie_Tibshirani_1993, proponen otra generalización al modelo d
 
 ## El modelo 
 
-Supongamos que se tiene una variable aleatoria $Y$ cuya distribución depende de un parámetro $\eta$ que será el predictor lineal y se relaciona con la media $\mu=\mathbb{E}(Y)$ mediante la función enlace $\eta=g(\mu)$, el modelo lineal generalizado con coeficientes variando se puede representar como:
-\begin{eqnarray}\label{modelo.general}
-\eta_i=\beta_0+x_i^{1}\beta_1(t_{1_i})+\cdots+x_i^p\beta_p(t_{p_i})
-\end{eqnarray}
-Donde los $t_1,\cdots,t_p$ cambian los coeficientes de las covariables $x^1,\cdots,x^p$ a través de las funciones $\beta_1,\cdots,\beta_p$. La dependencia de $\beta_j$ en $t_j$, con $j=1,...,p$ implica un tipo de interacción entre $t_j$ y $x^j$, donde la variable $t_j$ puede no ser tan diferente a $x^j$, pero también $t_j$ puede ser una variable especial como el tiempo.  
-Si se toma el modelo Gaussiano, donde $g(\mu)=\mu$ y la variable aleatoria $Y$ tiene distribución normal con media $\eta$, el modelo (\ref{modelo.general}) es de la forma
-\begin{eqnarray}\label{modelo.normal}
-Y_i=\beta_0+x_i^{1}\beta_1(t_{1_i})+\cdots+x_i^p\beta_p(t_{p_i})+\varepsilon_i
-\end{eqnarray}
-donde $\mathbb{E}(\varepsilon)=0$ y $Var(\varepsilon)=\sigma^2$
-## Casos del modelo
-El modelo de coeficientes variando generaliza los siguientes tipos de modelos:
-* Si $\beta_j(t_j)=\beta_j$ una función constante, entonces ese término es lineal en $x^j$. Si todos los términos son lineales se reduce a un modelo lineal generalizado clásico.
-* Si $x^j=c$ con $c$ constante entonces el $j-ésimo$ término es $\beta_j(t_j)$ una función no conocida. Si todos los términos tienen esta característica se tiene un modelo aditivo generalizado.
-* En el término del modelo $x\beta(t)$, cuando $x$ es una variable binaria ($0-1$). Supongamos que también hay un término $\beta_0(t)$ en el modelo. Esto equivale a tener una curva separada correspondiente a cada uno de los dos valores de $x$. 
-* A menudo las $t_j$ serán la misma variable, como puede ser la edad o el tiempo, que podría modificar los efectos de $x^1,...,x^p$
+Supongamos que se tiene una variable aleatoria $Y$ cuya distribución depende de un parámetro $\eta$ que será el predictor lineal y se relaciona con la media $\mu=\E(Y)$ mediante la función enlace $\eta=g(\mu)$, el modelo lineal generalizado con coeficientes variando se puede representar como:
+
+\begin{equation} \nonumber
+\eta_{i} = \beta_0 + \x^{(1)}_{i} \beta_{1}(\t_{1_{i}}) + \ldots
++ \x^{(s)}_{i} \beta_{s}(\t_{s_{i}}) \hspace{0.7cm}
+\end{equation}
+
+\begin{equation} \label{modelo.general}
+\y_{i} = \eta_i+\varepsilon_i \hspace{0.7cm}
+(i=1, \ldots, n) \hspace{0.1cm} ,
+\end{equation}
+
+Donde las variables explicativas $\t_{k_i}$ cambian el comportamiento de los coeficientes de las covariables $\x^{(k)}_i$ a través de las funciones $\beta_k(\cdot)$ para $k=1,\ldots,s$. La dependencia de $\beta_k$ en $\t_{k_i}$ implica un tipo de interacción entre $\t_{k_i}$ y $\x^{(k)}_i$. Las variables $\t_{k_i}$ pueden no ser tan diferentes a $\x^{(k)}_i$, pero también puede ser variables como el tiempo.  
+Si se toma el modelo Gaussiano, donde $g(\mu)=\mu$ y la variable aleatoria $\y_i$ tiene distribución normal con media $\eta_i$, el modelo (\ref{modelo.general}) es de la forma
+
+\begin{equation}\label{modelo.normal}
+\y_i=\beta_0 + \x^{(1)}_{i} \beta_{1}(\t_{1_{i}}) + \ldots
++ \x^{(s)}_{i} \beta_{s}(\t_{s_{i}})+\varepsilon_i
+\end{equation}
+donde $\varepsilon_i$ es el error aleatorio con $\E(\varepsilon)=0$ y $Var(\varepsilon)=\sigma^2$ 
+
+
+### Casos del modelo
+El modelo de coeficientes variando generaliza los siguientes tipos de modelos:  
+a) Si $\beta_k(\t_{k_i})=\beta_k$ es una función constante, entonces ese término es lineal en $x^{(k)}_i$. Si todos los términos son lineales se reduce a un modelo lineal generalizado clásico.  
+b) Si $\x^{(k)}_i=c$ con $c$ constante entonces el $k-ésimo$ término es $\beta_k(\t_{k_i})$ una función no conocida. Si todos los términos tienen esta característica se tiene un modelo aditivo generalizado.  
+c) Una función lineal $\beta_k(\t_{k_i})=\beta_k \t_{k_i}$ produce una interacción de la forma $\beta_k \x^{(k)}_i \t_{k_i}$.  
+d) En el término del modelo $\x^{(k)}_i\beta_k(t_{k_i})$, cuando $\x_i$ es una variable binaria ($0-1$). Supongamos que hay un término $\beta_0(t_{0_i})$ en el modelo. Esto equivale a tener una curva separada correspondiente a cada uno de los dos valores de $\x_i$.   
+e) A menudo las $\t_{k_i}$ serán la misma variable, como puede ser la edad o el tiempo, que podría modificar los efectos de $\x^{(k)}_i$. Supongamos que, los datos consisten en mediciones repetidas de las variables $\y_i, \x^{(1)}_i, \ldots, \x^{(s)}_i$ sobre $n$ puntos de tiempo $\t\in(\t_1,...,\t_n)$. Entonces se podría modelar esto a lo largo del tiempo
+$$\eta_{t} =\beta_0(t_i) +\x^{(1)}_i(t_{1_i})\beta_1(t_{1_i}) + ... +\x^{(s)}_i (t_{s_i})\beta_s(t_{s_i})$$
+Que es llamado como *modelo lineal generalizado dinámico* o *condicionalmente paramétrico*  
+f) La variable modificante $\t_{k_i}$ puede ser la misma que $\x^{(k)}_i$, por simplicidad suponemos que es un modelo lineal normal con un solo término. 
+$$\y_i =\x_i \beta_(\x_i) + \varepsilon_i$$
+Este es un modelo común de suavizamiento o regresión no paramétrica de $\y$ versus $\x$.  
+g) Cada $\t_{k_i}$ puede tener un valor escalar o vectorial.  
+h) En todos los casos anteriores, hay muchas formas de modelar las funciones $\beta_k(\t_{k_i})$. Por ejemplo, podríamos usar representaciones paramétricas flexibles tales como polinomios, series de Fourier o polinomios por partes. De manera más general  se pueden utilizar funciones no paramétricas, mediante el uso de métodos kernel, penalización o formulación bayesiana estocástica.  
+
+### Matricialmente
+
+El modelo (\ref{modelo.general}) puede ser representado matricialmente como:
+
+\begin{equation} \label{modelo.matricial}
+\ymn = \tilde{\Nn}_1\betan_1+\ldots+\tilde{\Nn}_s\betan_s+\varepsilonn,
+\end{equation}
+
+donde $\ymn$ es un vector aleatorio de respuestas observadas $(n\times 1)$,  $\tilde{\Nn}_k=\Xn^{(k)}\Nn_k$, $\Xn^{(k)}=\diag_{1\leq i\leq n}(x_i^{(k)})$ y $\Nn_k$ es la matriz de incidencia de $(n\times r)$ con el $(i,l)$-ésimo elemento igual al indicador $I({\rm \t}_{k_i} = {\rm \t}_{k_{l}}^0)$, con ${\rm t}_{k_{l}}^{0}$ que denota los valores distintos y ordenados de la variable explicativa ${\rm t}_{k_i}$ y $\betan_k=(\psi_{k_1},\ldots,\psi_{k_r})^{\top}$ es un $(r_k\times 1)$ vector
+un vector de parámetros con $\psi_{k_l}=\beta_k(t^{0}_{k_l})$, para $l=1,\ldots,r_k$.
+
+
+## Estimación
+
+El modelo (\ref{modelo.general}), es general para la mayoría de las aplicaciones, ya que no se imponen restricciones a las funciones de los coeficientes. La estimación no paramétrica sin restricciones de estas funciones probablemente no sería posible, salvo en el caso de diseños especiales. En el caso de los datos observacionales, es probable que se vea un valor diferente para cada $\t_k$, en cada muestra. Por esta razón, se impone restricciones a las funciones de los coeficientes variando, por ejemplo, a trozos con forma paramétrica conocida o funciones suaves pero no paramétricas. Una aproximación sería a través de bases paramétricas como funciones polinómicas o trigonométricas. Normalmente, éstas no proporcionan suficiente flexibilidad y adaptabilidad local, por eso es preferible un conjunto de bases splines.    
+Se procederá igual que con un modelo lineal, sólo que con varias variables definidas por los productos de cada $\x_i^{(k)}$, y las bases de $\beta_k(\t_{k_i})$ con este enfoque, las herramientas inferenciales estándar sirven para evaluar conjuntos de coeficientes, puntos de influencia, etc.  
+Las características de las curvas ajustadas pueden ser diferentes con pequeños cambios en las posiciones de los nudos, sobre todo si sólo se tienen pocos.   
+En este trabajo se mostrará el procedimiento para el modelo (\ref{modelo.normal}) ya que para el modelo (\ref{modelo.general}) se incluyen procedimientos diferentes como el algoritmo de tipo NewtonRaphson.
+
+### Mínimos Cuadrados Penalizados
+
+Para estimar $\beta_k$ por minimización se toma en cuenta la siguiente esperanza:
+$$\E\left\{y_i-\sum_{j=1}^{s}\x_i^j \beta_j(\t_{j_i})\right\}^2$$
+Se condiciona en $t_{k_i}$, es una condición suficiente para la solución:
+
+$$\E\left\{\x^k_i\left[y_i-\sum_{j=1}^{s} \x_i^j \beta_j(\t_{j_i}) \right]|\t_{k_i}\right\}=0 \hspace{1cm}k=1,...,s$$
+Así se encuentra $\beta_k(\cdot)$, reordenando la ecuación anterior y resolver:
+
+$$
+\beta_k(\t_{k_i})=\frac
+{\E\left\{\x^{(k)}_i\left[y_i-\sum_{j=1\\j\neq k}^{s} \x_i^{(j)} \beta_j(\t_{j_i}) \right]|\t_{k_i}\right\}}
+{\E\{\x^{(k)^2}|\t_{k_i}\}}
+$$
+
+$$
+\beta_k(\t_{k_i})=\frac
+{\E\left\{\x^{(k)^2}_i\left[y_i-\sum_{j=1\\j\neq k}^{s} \x_i^{(j)}\beta_j(\t_{j_i}) \right]/\x^{(k)}_i|\t_{k_i}\right\}}
+{\E\{\x^{(k)^2}|\t_{k_i}\}}
+$$
+La anterior ecuación es una relación de dos esperanzas condicionales y puede verse como una media ponderada condicional, donde las ponderaciones condicionales vienen dadas por el término $\x^{(k)^2}_i$, el término en el denominador garantiza que las ponderaciones se integren en $1$. Existe una ecuación similar para cada función $\beta_k$, y el conjunto de $k$ ecuaciones debe resolver simultáneamente la función $\beta_k$, como una estimación flexible de una esperanza condicional, esto sugiere que cada función $\beta_k$ puede estimarse de forma iterativa "de uno en uno" mediante el alisado $\frac{y_i-\sum_{j=1\\j\neq k}^{s} \x_i^{(j)} \beta_j(\t_{j_i})}{\x_i^{(k)}}$ en $t_k$, con pesos $\x_i^{(k)^2}$. 
+
+Para la estimación de $\beta_k$ se propone minimizar la suma de cuadrados de los errores penalizados
+
+\begin{equation}\label{sce.penalizado} 
+\sum_{i=1}^n\left\{y_i-\sum_{j=1}^{s} \x_i^{(j)} \beta_j(\t_{j_i})\right\}^2+\sum_{j=1}^{s}\lambda_j\int\beta_j^{''}(t_{j_i})^2 dt_j
+\end{equation}
+
+El primer término mide la bondad del ajuste y el segundo penaliza la rugosidad de cada $\beta_k$ con un parámetro fijo $\lambda_j$.  
+De manera matricial se define como:
+
+\begin{equation}
+\left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)^{\top}\left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)-\sum_{j=1}^s\lambda_j\betan_j^{\top}\Kn_j\betan_j
+\end{equation}
+
+donde $\Kn$ es la matriz definida positiva de $(r\times r)$ que depende de las matrices tridiagonales $\Qn$ y $\Rn$
+
+### Verosimilitud Penalizada
+
+Bajo el modelo de coeficientes variando de la ecuación (\ref{modelo.normal}) se tiene que el log. de verosimilitud de $\y_i\sim(\sum_{j=1}^{s} \x_i^{(j)} \beta_j(\t_{j_i});\sigma^2)$ es:
+
+\begin{equation}\label{log.verosimilitud} 
+\ell(\tetn)=-\frac{n}{2} log (2\pi)-\frac{n}{2}log\; \sigma^2-\frac{1}{2\sigma^2} \left\{y_i-\sum_{j=1}^{s} \x_i^{(j)} \beta_j(\t_{j_i})\right\}^2
+\end{equation}
+
+donde $\tetn=(\betan_1^{\top},\ldots,\betan_s^{\top},\sigma^2)^{\top}$ es el vector de parámetros a estimar. Matricialmente se tiene:
+
+\begin{equation}\label{log.verosimilitud.matricial} 
+\ell(\tetn)=-\frac{n}{2} log (2\pi)-\frac{n}{2}log\; \sigma^2-\frac{1}{2\sigma^2} \left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)^{\top}\left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)
+\end{equation}
+
+Luego se tiene la función de log. verosimilitud penalizada que esta definida por:
+
+$$\ell_p(\tetn,\lambda)=\ell(\tetn)-\sum_{j=1}^s\frac{\lambda_j}{2}\betan_j^{\top}\Kn_j\betan_j$$
+
+### Función Score Penalizada
+
+Considerando $\lambda$ fijo la función de Score penalizada esta dada por:
+
+\begin{equation}\label{score}
+\Un_p(\tetn) =\begin{pmatrix}
+\Un_p^{\betan_k}(\tetn) \\
+\Un_p^{\sigma^2}(\tetn)
+\end{pmatrix}=
+\begin{pmatrix}
+\frac{\partial\ell_p(\tetn,\lambda)}{\partial \betan_k}\\
+\frac{\partial\ell_p(\tetn,\lambda)}{\partial \sigma^2}
+\end{pmatrix}
+\end{equation}
+
+Así se tiene:  
+
+\begin{align}\label{score.beta}\nonumber
+\frac{\partial\ell_p(\tetn,\lambda)}{\partial \betan_k}&=\frac{\partial}{\partial\betan_k}\left[-\frac{1}{2\sigma^2} \left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)^{\top}\left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)-\sum_{j=1}^s\frac{\lambda_j}{2}\betan_j^{\top}\Kn_j\betan_j \right]\\
+    &=\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \left(\ymn-\tilde{\Nn}_k\betan_k- \sum_{j=1;j\neq k}^s\tilde{\Nn}_j\betan_j\right)-\lambda_k\Kn_k\betan_k
+\end{align}
+
+\begin{align}\label{score.sigma}\nonumber
+\frac{\partial\ell_p(\tetn,\lambda)}{\partial \sigma^2}&=\frac{\partial}{\partial\sigma^2}\left[-\frac{n}{2}log\;\sigma^2 -\frac{1}{2\sigma^2} \left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)^{\top}\left(\ymn-\sum_{j=1}^s\tilde{\Nn}_j\betan_j\right) \right]\\
+    &=-\frac{n}{2\sigma^2}+ \frac{1}{\sigma^4} \left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)^{\top}\left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)
+\end{align}
+
+### Matriz Hessiana Penalizada
+
+\begin{align}\nonumber
+\frac{\partial^2\ell_p(\tetn,\lambda)}{\partial \betan_k\partial \betan_k^{\top}}= \frac{\partial}{\partial\betan_k^{\top}}
+\left[\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \left(\ymn-\tilde{\Nn}_k\betan_k- \sum_{j=1;j\neq k}^s\tilde{\Nn}_j\betan_j\right)-\lambda_k\Kn_k\betan_k\right]
+\end{align}
+* Si $k=k'$
+
+\begin{align}\label{hessiana.beta.beta.1}
+\frac{\partial^2\ell_p(\tetn,\lambda)}{\partial \betan_k\partial \betan_k^{\top}}= -\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \tilde{\Nn}_k - 
+\lambda_k\Kn_k
+\end{align}
+* Si $k\neq k'$
+
+\begin{align}\label{hessiana.beta.beta.2}
+\frac{\partial^2\ell_p(\tetn,\lambda)}{\partial \betan_k\partial \betan_k^{\top}}= -\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \tilde{\Nn}_k 
+\end{align}
+
+\begin{align}\label{hessiana.beta.sigma}\nonumber
+\frac{\partial^2\ell_p(\tetn,\lambda)}{\partial \sigma^2\partial \betan_k^{\top}}&= \frac{\partial}{\partial\sigma^2}
+\left[\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \left(\ymn-\tilde{\Nn}_k\betan_k- \sum_{j=1;j\neq k}^s\tilde{\Nn}_j\betan_j\right)-\lambda_k\Kn_k\betan_k\right]\\
+  &=-\frac{1}{\sigma^4}\tilde{\Nn}_k^{\top} \left(\ymn-\tilde{\Nn}_k\betan_k- \sum_{j=1;j\neq k}^s\tilde{\Nn}_j\betan_j\right)
+\end{align}
+
+\begin{align}\label{hessiana.sigma.sigma}\nonumber
+\frac{\partial^2\ell_p(\tetn,\lambda)}
+{\partial \sigma^2\partial \sigma^2}&= 
+\frac{\partial}{\partial\sigma^2}
+\left[-\frac{n}{2\sigma^2}+ \frac{1}{\sigma^4} \left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)^{\top}\left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)\right]\\
+  &=\frac{n}{2\sigma^4}- \frac{1}{\sigma^6} \left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)^{\top}\left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)
+\end{align}
+
+### Matriz de Información de Fisher Penalizada
+
+Se define a la matriz de información de Fisher penalizada como 
+$$\mathcal{I}_{p}(\tetn)=-\E\left\{\frac{\partial^2\ell_p(\tetn,\lambda)}{\partial\tetn\partial\tetn^{\top}}\right\}$$
+donde:
+$$\mathcal{I}_p(\tetn)=
+\begin{pmatrix}
+\mathcal{I}_p^{\betan_1\betan_1^{\top}}(\tetn) & \ldots & \mathcal{I}_p^{\betan_1\betan_s^{\top}}(\tetn) & \mathcal{I}_p^{\betan_1\sigma^2}(\tetn)\\
+\vdots & \ddots & \vdots & \vdots\\
+\mathcal{I}_p^{\betan_s\betan_1^{\top}}(\tetn) & \ldots & \mathcal{I}_p^{\betan_s\betan_s^{\top}}(\tetn) & \mathcal{I}_p^{\betan_s\sigma^2}(\tetn)\\
+\mathcal{I}_p^{\sigma^2\betan_1}(\tetn) & \ldots & 
+\mathcal{I}_p^{\sigma^2\betan_s}(\tetn) & \mathcal{I}_p^{\sigma^2\sigma^2}(\tetn)
+\end{pmatrix}
+$$
+
+Es así que aplicamos a (\ref{hessiana.beta.beta.1}), (\ref{hessiana.beta.beta.2}), (\ref{hessiana.beta.sigma}) y (\ref{hessiana.sigma.sigma}) se tiene:
+
+* Para $k=k'$
+
+\begin{align}\label{infor.beta.beta.1}\nonumber
+\mathcal{I}_p^{\betan_k\betan^{\top}_k}(\tetn)&=
+-\E\left\{-\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \tilde{\Nn}_k - \lambda_k\Kn_k \right\}\\
+  &=\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \tilde{\Nn}_k + \lambda_k\Kn_k
+\end{align}
+* Para $k\neq k'$
+
+\begin{align}\label{infor.beta.beta.2}\nonumber
+\mathcal{I}_p^{\betan_{k}\betan_{k'}^{\top}}(\tetn)&=
+-\E\left\{-\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \tilde{\Nn}_k\right\}\\
+  &=\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \tilde{\Nn}_k 
+\end{align}
+
+\begin{align}\label{infor.beta.sigma}\nonumber
+\mathcal{I}_p^{\betan_k\sigma^2}(\tetn)&=
+-\E\left\{-\frac{1}{\sigma^4}\tilde{\Nn}_k^{\top} \left(\ymn-\tilde{\Nn}_k\betan_k- \sum_{j=1;j\neq k}^s\tilde{\Nn}_j\betan_j\right) \right\}\\\nonumber
+  &=\frac{1}{\sigma^4}\tilde{\Nn}_k^{\top} \left(\E[\ymn]- \sum_{j=1}^s\tilde{\Nn}_j\betan_j\right)\\
+  &=\bf{0}_{(r\times 1)}
+\end{align}
+
+\begin{align}\label{infor.sigma.sigma}\nonumber
+\mathcal{I}_p^{\sigma^2\sigma^2}(\tetn)&= -\E\left\{ 
+\frac{n}{2\sigma^4}- \frac{1}{\sigma^6} \left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)^{\top}\left(\ymn- \sum_{j=1}^s\tilde{\Nn}_j\betan_j \right)\right\}\\\nonumber
+  &=\frac{n}{2\sigma^4}
+\end{align}
+
+### Estimador de Máxima Verosimilitud Penalizada
+
+Si consideramos $\lambda$ y $\sigma^2$ fijos, para hallar el estimador de máxima verosimilitud penalizada se debe igualar el vector score penalizado a cero.
+
+Así se tiene:
+
+$$\Un_p^{\betan_k}(\tetn)=\frac{\partial\ell_p(\tetn,\lambda)}{\partial \betan_k}=0$$
+Entonces de (\ref{score.beta}):
+
+$$\frac{1}{\sigma^2}\tilde{\Nn}_k^{\top} \left(\ymn-\tilde{\Nn}_k\betan_k- \sum_{j=1;j\neq k}^s\tilde{\Nn}_j\betan_j\right)-\lambda_k\Kn_k\betan_k=0$$
+luego,
+
+$$\tilde{\Nn}_k^{\top} \left(\ymn- \sum_{j=1;j\neq k}^s \tilde{\Nn}_j\betan_j\right) = \left(\tilde{\Nn}_k^{\top}\tilde{\Nn}_k+ \lambda_k\Kn_k\right)\betan_k$$
+Finalmente se tiene:
+
+\begin{align}\label{beta.estimado}
+\hat\betan_k=\left(\tilde{\Nn}_k^{\top}\tilde{\Nn}_k+ \lambda_k\Kn_k\right)^{-1}
+\tilde{\Nn}_k^{\top} \left(\ymn- \sum_{j=1;j\neq k}^s \tilde{\Nn}_j\betan_j\right)  
+\end{align}
+
+
+# Aplicación
+
+Se utilizará los datos de los rendimientos diarios de las acciones de la General Electric Company y el índice de Standard $\&$ Poor's 500 (S$\&$P 500). Los datos están en el `data.frame` *capm* en el paquete `HRW`. La variable `Date` se tiene desde el $1$ de noviembre de $1993$ al $31$ de marzo de 2003, por lo que hay más de nueve años de datos.  Si $P_t$ es el precio de una acción en el día $t$, entonces el rendimiento logarítmico de ese día es $log\left(\frac{P_t}{P_{t_1}}\right)$. El exceso de rendimiento logarítmico es el rendimiento logarítmico menos la tasa de interés libre de riesgo, generalmente considerada como la tasa de facturación del Tesoro a corto plazo.  
+El siguiente código calcula el rendimiento logarítmico excedente tanto de las acciones de General Electric Company como del índice S$\&$P 500:
+
+```{r}
+library(HRW) 
+data(capm)
+n <- dim(capm)[1]
+#riesgo.libre=riskfree
+riesgo.libre <- capm$Close.tbill[2:n]/(100*365)
+#elrGE=rend.log.ex.GE
+rend.log.ex.GE <- diff(log(capm$Close.ge))-riesgo.libre
+rend.log.ex.SP500 <- diff(log(capm$Close.sp500))-riesgo.libre
+
+plot(rend.log.ex.GE)
+plot(rend.log.ex.SP500)
+
+hist(rend.log.ex.GE,freq = FALSE)
+hist(rend.log.ex.SP500,freq = FALSE)
+
+plot(rend.log.ex.GE,rend.log.ex.SP500)
+```
+Donde `capm$Close.sp500` y `capm$Close.ge` son los precios de cierre diarios y `capm$Close.tbill` es la tasa diaria de facturación del Tesoro expresada como porcentaje. En el código, `capm$Close.tbill` primero se divide por $100$ para convertir de un porcentaje a una fracción y luego se divide por $365$ para convertir de una tasa anual a una tasa diaria. Por eso, `rend.log.ex.GE` y `rend.log.ex.SP500` son los rendimientos logarítmicos excedentes diarios de las acciones de General Electric y en el índice S&P 500, respectivamente.  
+Uno de los supuestos del modelo de fijación de precios de activos de capital en finanzas es que los rendimientos logarítmicos excedentes medios de una acción dependen linealmente de los rendimientos logarítmicos excedentes del mercado. El rendimiento del índice S&P 500 suele sera utilizado como proxy de la rentabilidad del mercado. Por lo general, el modelo de regresión lineal simple, se ajusta solo a datos recientes, ya que se espera que la pendiente cambie lentamente a lo largo del tiempo. Una alternativa es ajustar un modelo de coeficiente variando a todos los datos, con el intercepto y pendiente dependiendo de la fecha. Hacer esto proporcionaría evidencia como y con qué rapidez está cambiando la pendiente. La teoría económica predice que el intercepto es cero, por lo que se espera que el intercepto estimado sea insignificante. Primero, ajustamos un modelo de regresión lineal simple a todos los datos usando:
+
+```{r}
+library(mgcv)
+fitSLR <- gam(rend.log.ex.GE ~ rend.log.ex.SP500)
+summary(fitSLR)
+```
+
+Para verificar si un modelo lineal es apropiado, ajustamos el modelo de regresión no paramétrico del rendimiento logarítmico excedente de las acciones de General Electric que es una función suave e invariable en el tiempo del rendimiento logarítmico excedente del índice S&P 500. este modelo en comparación con el modelo lineal simple a través de una prueba $F$.
+
+```{r}
+fitNPR <- gam(rend.log.ex.GE ~ s(rend.log.ex.SP500),method = "REML")
+summary(fitNPR)
+anova(fitSLR,fitNPR,test = "F")
+```
+
+La prueba $F$ rechaza el modelo de regresión lineal simple. Sin embargo, el tamaño de la muestra es bastante grande ya que hubo $2362$ días de retornos y por lo tanto, hay un poder sustancial para detectar desviaciones de la linealidad. 
+
+
+La gráfica de la regresión no paramétrica fit(fitNPR) se desvía solo ligeramente de una línea recta, al menos sobre el rango de la mayor parte de los datos. 
+
+```{r}
+plot(fitNPR)
+```
+Además, el ajuste suave tiene solo un poco más de $R^2-ajustado$, $56,4\%$, en comparación con el del modelo lineal, $55,9\%$. Cuando recurrimos a modelos de coeficientes variando, como suposición de trabajo supondremos que la regresión de los rendimientos logarítmicos excedentes de General Electric sobre los rendimientos logarítmicos excedentes del mercado es lineal, pero la intersección y la pendiente varían con el tiempo.  
+Ahora, se ajusta y se grafica el modelo de coeficientes variando y lo comparamos con el modelo lineal de coeficientes constantes mediante una prueba $F$. En el modelo de coeficientes variando, el intercepto y la pendiente de la regresión lineal del logaritmo de retorno excedente de General Electric con el excedente de rendimiento logarítmico del índice S&P 500 son funciones suaves en el tiempo (años), almacenada como la variable $t$:
+
+```{r}
+dayNums <- (1:(n-1))/(n-1)
+startTime <- 1993 + 11/12 #Noviembre
+endTime <- 2003 + 3/12 #Marzo
+t <- startTime + (endTime - startTime)*dayNums
+fitVCM <- gam(rend.log.ex.GE ~ s(t) + s(t,by = rend.log.ex.SP500), method = "REML")
+summary(fitVCM)
+anova(fitSLR,fitVCM,test = "F")
+```
+
+Las funciones de intersección y pendiente se representan en la siguiente gráfica. El argumento seleccionado de gam() se usa para seleccionar qué componente trazar. El gráfico de código (fitVCM) sin el uso de seleccionar trazaría tanto la intersección como la pendiente pero usaría
+la misma escala en el eje y, lo cual no permitiría especificar valores separados de `ylab` para las dos parcelas. El argumento `seWithMean = TRUE` se usa para especificar que los intervalos de confianza deben incluir la incertidumbre sobre la media. 
+
+```{r}
+par(mfrow=c(1,2))
+plot(fitVCM,select = 1,ylim = c(-0.001,0.001),seWithMean = TRUE)
+plot(fitVCM,select = 2,ylim = c(0.5,1.6),seWithMean = TRUE)
+```
+
+La estimación de la intersección sugiere que la intersección fue cero o casi nula, durante todo el período, lo que concuerda con la teoría económica. La pendiente estimada varía entre aproximadamente $1,0$ y $1,4$ durante este período. El modelo de regresión lineal simple se rechaza en favor del modelo de coeficientes variando, aunque el último proporciona solo una pequeña mejora en el ajuste medido por el $R^2-ajustado$.  
+
+
+
+
+
+
+
+
 
 
 
