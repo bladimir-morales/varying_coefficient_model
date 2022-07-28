@@ -56,17 +56,14 @@ knitr::opts_chunk$set(echo = TRUE)
 # Introducción
 
 Los modelos aditivos generalizados (modelos no paramétricos), propuestos por @Hastie_Tibshirani_1986 dan a conocer una nueva clase de modelos de regresión, extendiendo y flexibilizando el modelo de regresión clásico, reemplazando la función lineal por una función aditiva suave y no paramétricas, la cual es estimada por el algoritmo de puntuación local (local scoring algorithm).  
-Es así que,  @Hastie_Tibshirani_1993, proponen otra generalización al modelo de regresión lineal clásico, denominados modelos de coeficientes variando (Varying-Coefficient Models VCMs), los cuales contienen regresores lineales pero permiten que sus coeficientes cambien suavemente con el valor de otras variables, que se denominan "modificadores de efecto".
 
+Es así que,  @Hastie_Tibshirani_1993, proponen otra generalización al modelo de regresión lineal clásico, denominados modelos de coeficientes variando (Varying-Coefficient Models VCMs), los cuales contienen regresores lineales pero permiten que sus coeficientes cambien suavemente con el valor de otras variables, que se denominan "modificadores de efecto". A partir de ahi existe bastante bibliografía e investigaciones sobre este tipo de modelos.
 
-asta ahora, hemos desarrollado modelos para interacciones bidireccionales entre dos predictores sólo en el caso especial de que al menos una de las dos variables sea discreta -
-incluyendo la binaria como un caso especial de discreta. Ahora introducimos una clase especial
-de interacciones continuas por continuas.
 # Modelo con Coeficientes Variando VCM
 
 ## El modelo 
 
-Supongamos que se tiene una variable aleatoria $Y$ cuya distribución depende de un parámetro $\eta$ que será el predictor lineal y se relaciona con la media $\mu=\E(Y)$ mediante la función enlace $\eta=g(\mu)$, el modelo lineal generalizado con coeficientes variando se puede representar como:
+Supongamos que se tiene una variable aleatoria $Y$ cuya distribución depende de un parámetro $\eta$ que será el predictor lineal y se relaciona con la media $\mu=\E(Y)$ mediante la función enlace $\eta=g(\mu)$, el modelo lineal generalizado con coeficientes variando (VCGLMs) se puede representar como:
 
 \begin{equation} \nonumber
 \eta_{i} = \beta_0 + \x^{(1)}_{i} \beta_{1}(\t_{1_{i}}) + \ldots
@@ -300,6 +297,8 @@ Finalmente se tiene:
 \hat\betan_k=\left(\tilde{\Nn}_k^{\top}\tilde{\Nn}_k+ \lambda_k\Kn_k\right)^{-1}
 \tilde{\Nn}_k^{\top} \left(\ymn- \sum_{j=1;j\neq k}^s \tilde{\Nn}_j\betan_j\right)  \\
 \end{align}
+
+Para finalizar la estimación se puede utilizar algún método de estimación como el Algoritmo Scoring Fisher o el Algoritmo Backfitting.
 
 Para $\sigma^2$, se tiene:
 
