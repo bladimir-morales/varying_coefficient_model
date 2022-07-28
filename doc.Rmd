@@ -86,6 +86,7 @@ donde $\varepsilon_i$ es el error aleatorio con $\E(\varepsilon)=0$ y $Var(\vare
 
 
 ## Casos del modelo
+
 El modelo de coeficientes variando generaliza los siguientes tipos de modelos:  
 a) Si $\beta_k(\t_{k_i})=\beta_k$ es una función constante, entonces ese término es lineal en $x^{(k)}_i$. Si todos los términos son lineales se reduce a un modelo lineal generalizado clásico.  
 b) Si $\x^{(k)}_i=c$ con $c$ constante entonces el $k-ésimo$ término es $\beta_k(\t_{k_i})$ una función no conocida. Si todos los términos tienen esta característica se tiene un modelo aditivo generalizado.  
@@ -482,7 +483,9 @@ dayNums <- (1:(n-1))/(n-1)
 startTime <- 1993 + 11/12 #Noviembre
 endTime <- 2003 + 3/12 #Marzo
 t <- startTime + (endTime - startTime)*dayNums
+
 fitVCM <- gam(rend.log.ex.GE ~ s(t) + s(t,by = rend.log.ex.SP500), method = "GCV.Cp")
+
 summary(fitVCM)
 ```
 
@@ -547,7 +550,7 @@ visreg(fitVCM)
 
 * En este trabajo se presento de manera inicial el modelo lineal generalizado de coeficientes variando, lo cual nos proporciona diferentes modelos con distribuciones pertencientes a la familia exponencial.
 
-* También se puede contar con modelos de coeficientes variando asimétricos (skew).
+* También se puede contar con modelos de coeficientes variando de distribuciones asimétricos (skew).
 
 \newpage
 
