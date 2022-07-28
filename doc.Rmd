@@ -496,6 +496,8 @@ Comparamos con el modelo lineal de coeficientes constantes mediante una prueba $
 anova(fitSLR,fitVCM,test = "F")
 ```
 
+De la misma manera el modelo VCM es significativo, lo cual concluye que supuestamente el mejor modelo es el de coeficientes variando.
+
 Las funciones de intersección y pendiente se representan en la siguiente gráfica. El argumento seleccionado de `gam()` se usa para seleccionar qué componente trazar. El gráfico de código `fitVCM` sin el uso del seleccionador, trazaría tanto la intersección como la pendiente pero usaría
 la misma escala en el eje $y$, lo cual no permitiría especificar valores separados de `ylab` para las dos parcelas. El argumento `seWithMean = TRUE` se usa para especificar que los intervalos de confianza deben incluir la incertidumbre sobre la media. 
 
@@ -537,6 +539,15 @@ par(mfrow=c(1,2))
 visreg(fitVCM)
 ```
 
+# Conclusiones
+
+* En general los modelos de regresión con coeficientes variando es una alternativa de modelación de datos, cuando una covariable en interacción con otra variable puede ayudar a explicar de mejor forma el modelo, teniendo siempre en cuenta el principio de parsimonia.
+
+* Es bastante flexible en cuanto al estudio de datos que se requiera realizar, se podría utilizar en datos de corte transversal y así también en datos longitudinales (panel).
+
+* En este trabajo se presento de manera inicial el modelo lineal generalizado de coeficientes variando, lo cual nos proporciona diferentes modelos con distribuciones pertencientes a la familia exponencial.
+
+* También se puede contar con modelos de coeficientes variando asimétricos (skew).
 
 \newpage
 
